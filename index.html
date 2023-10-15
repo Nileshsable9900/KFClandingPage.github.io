@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Landing Page | Responsive Design</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <section class="main">
+    <header>
+      <a href="#"><img src="https://scontent.fixu2-1.fna.fbcdn.net/v/t39.30808-6/392819097_2276852792501154_5959841774023210032_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Rj4RCBvW0sYAX9ttA5c&_nc_ht=scontent.fixu2-1.fna&oh=00_AfC5299lmegP8HnjLAlno4BZ9jCPFi6dQPiloJyfE6gaxg&oe=65315B6C" class="logo"></a>
+      <div class="toggle"></div>"
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h2>Its Finger<br>Lickin <span>Good.</span></h2>
+        <p>Creating a KFC landing page using HTML, CSS, and JavaScript can be a fun and challenging project. Here are some of the challenges you might encounter in each phase of development:<br>
+        <p>1:->Structure and Layout: Creating a well-structured layout that mimics the KFC website can be challenging. You'll need to use appropriate HTML tags for headers, navigation menus, sections, and more.<br>
+        2:->Responsive Design: Ensuring that your page looks good on various screen sizes and devices requires thoughtful HTML structure, including the use of responsive design techniques such as media queries.</p></p>
+        <a href="#" class="btn">Order Now</a>
+      </div>
+      <div class="slider">
+        <div class="slides active">
+          <img src="https://scontent.fixu2-1.fna.fbcdn.net/v/t39.30808-6/384274682_2276852722501161_4448307320079198851_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=JyCLveYB1OkAX8G5Iux&_nc_ht=scontent.fixu2-1.fna&oh=00_AfATPpikSnOfBLXVFNGCnontwSVBC4zf1U6p4XnIpzps6Q&oe=6530C1B5">
+        </div>
+        <div class="slides">
+          <img src="https://scontent.fixu2-1.fna.fbcdn.net/v/t39.30808-6/384243465_2276852712501162_8926067167793447293_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=c85QIr2v5f0AX9R6yle&_nc_ht=scontent.fixu2-1.fna&oh=00_AfA-u6HinDMPit7NAaVsHWj6uo1uxszN-sE2I2XRhzgX1g&oe=6531AF98">
+        </div>
+        <div class="slides">
+          <img src="https://scontent.fixu2-1.fna.fbcdn.net/v/t39.30808-6/387877766_2276852755834491_7088796518501996827_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=3Uj1t_0_tz4AX8nSVIq&_nc_ht=scontent.fixu2-1.fna&oh=00_AfAAiqw5KKFI_Rqi78qmpN26LALGINJGrA-B2VJk32iAWQ&oe=65302315">
+        </div>
+        <div class="slides">
+          <img src="https://scontent.fixu2-1.fna.fbcdn.net/v/t39.30808-6/387875187_2276852855834481_3868436191723217023_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=vP3nOH5ISDcAX-PCMJ8&_nc_ht=scontent.fixu2-1.fna&oh=00_AfCNq9mCP52BoXN40cJ76dyQHKuhXPlc8vLlktC1zY4_iQ&oe=652FFCB3">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <ul class="sci">
+        <li><a href="https://www.facebook.com/nilesh.sable.1610/" target="_main"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="https://twitter.com/nileshs04953507"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="https://www.instagram.com/nileshsable75/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <div class="prevNext">
+        <p>Always Fresh</p>
+        <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    //toggle 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //slider
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    i = 0;
+    
+    function ActiveSlide(n){
+      for(slide of slides)
+      slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
+
+    // function for next btn
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     // function for prev btn
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length - 1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+.main {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(#f0483a, #d10a20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 100px;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.logo {
+  max-width: 76px;
+}
+.navigation {
+  display: flex;
+}
+.navigation li {
+  list-style: none;
+}
+.navigation li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+}
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .text {
+  width: 100%;
+  max-width: 600px;
+}
+.content .text h2 {
+  color: #fff;
+  font-size: 5em;
+  font-weight: 300;
+}
+.content .text h2 span {
+  font-weight: 700;
+}
+.content .text p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 20px 50px;
+  background: #fff;
+  color: #333;
+  font-size: 1.1em;
+  font-weight: 500;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.btn:hover {
+  letter-spacing: 2px;
+}
+.slider {
+  position: relative;
+}
+.slider .slides {
+  display: none;
+}
+.slider .slides.active {
+  display: block;
+}
+.slider .slides img {
+  width: 70%;
+  max-width: 600px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 30px 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.sci {
+  display: flex;
+}
+.sci li {
+  list-style: none;
+}
+.sci li a {
+  color: #fff;
+  font-size: 2em;
+  margin-right: 20px;
+  display: inline-block;
+  transition: 0.25s;
+}
+.sci li a:hover {
+  transform: translateY(-5px);
+}
+.prevNext {
+  position: relative;
+  user-select: none;
+}
+.prevNext p {
+  position: relative;
+  color: #fff;
+  text-align: end;
+  margin-bottom: 15px;
+}
+.prevNext p::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -35px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 2px;
+  background: #fff;
+}
+.prevNext span {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  font-size: 2em;
+  color: #fff;
+}
+.prevNext span:nth-child(2) {
+  margin-right: 20px;
+}
+
+/* now, make it responsive */
+@media (max-width: 991px) {
+  .main {
+    padding: 40px;
+  }
+  header {
+    padding: 20px 40px;
+  }
+  .logo {
+    max-width: 70px;
+  }
+  .content {
+    flex-direction: column;
+    margin: 120px 0 40px;
+  }
+  .content .text {
+    max-width: 100%;
+  }
+  .content .text h2 {
+    font-size: 4em;
+  }
+  .slider {
+    margin-top: 40px;
+  }
+  .slider .slides img {
+    width: 100%;
+    max-width: 420px;
+  }
+  .footer {
+    position: relative;
+    padding: 0;
+  }
+
+  .navigation {
+    display: none;
+  }
+  .navigation.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #d10a20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .navigation li a {
+    font-size: 1.5em;
+    margin: 10px 0;
+    display: inline-block;
+  }
+  .toggle {
+    position: relative;
+    width: 32px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+    cursor: pointer;
+  }
+  .toggle.active {
+    position: fixed;
+    right: 40px;
+  }
+  .toggle::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 0 #fff;
+    transition: 0.25s;
+  }
+  .toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+  }
+  .toggle::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(10px);
+    transition: 0.25s;
+  }
+  .toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  header,
+  .main {
+    padding: 20px;
+  }
+  .toggle.active {
+    right: 20px;
+  }
+  .content .text h2 {
+    font-size: 3em;
+  }
+  .btn {
+    padding: 15px 30px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .sci {
+    margin-top: 40px;
+  }
+}
+
+  </style>
+</body>
+</html>
